@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "duet2score"
+version = "0.1.0"
+description = "Research scaffolding for audio-visual four-hand piano transcription"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-only"
+authors = [{ name = "Duet2Score contributors" }]
+dependencies = []
+
+[project.scripts]
+duet2score-inventory = "duet2score.data.inventory:main"
+duet2score-extract-audio = "duet2score.data.extract_audio:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

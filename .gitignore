@@ -221,3 +221,40 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Duet2Score: private recordings, score scans, weights and outputs
+/data/
+/outputs/
+/runs/
+/checkpoints/
+/models/weights/
+/third_party/
+/artifacts/
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.safetensors
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.musicxml
+*.mxl
+*.mscz
+*.mid
+*.midi
+*.pdf
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.cookie
+cookies.txt
+credentials.json
+secrets.json

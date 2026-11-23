@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1",
+  "summary": {"pieces": 1, "video": 1, "audio": 0, "score": 1},
+  "pieces": [
+    {
+      "piece_id": "piece_001",
+      "assets": [
+        {"kind": "video", "path": "piece_001/performance.mp4", "extension": ".mp4", "bytes": 1024},
+        {"kind": "score", "path": "piece_001/score.pdf", "extension": ".pdf", "bytes": 1024}
+      ],
+      "has_video": true, "has_audio": false, "has_score": true, "needs_review": false
+    }
+  ]
+}
