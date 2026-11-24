@@ -32,7 +32,7 @@ data/raw/
 ```bash
 cd ~/duet2score
 source .venv/bin/activate
-DATA="$HOME/datasets/duet2score/5877895284_AnEinstein/Bella Lucas"
+DATA="$(find "$HOME/datasets/duet2score" -type d -name 'Bella Lucas' -print -quit)"
 duet2score-inventory \
   --root "$DATA" \
   --layout grouped \
