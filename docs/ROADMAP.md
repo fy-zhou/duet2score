@@ -5,6 +5,9 @@
 - [x] Package setup, ignore private data, basic event schema
 - [x] Raw-piece inventory CLI, optional ffprobe metadata
 - [x] ffmpeg audio extraction helper
+- [x] Run initial grouped inventory: 49 video + 49 audio + 50 score; 49 filename-matched triplets (user local run)
+- [x] Add optional ffprobe-based duration audit (command, not yet executed on real data)
+- [ ] Validate audio/video contents and duration anomalies; confirm 49 candidate pairs manually
 - [ ] Inspect dataset statistics and define ground truth/held-out tracks
 - [ ] Automatically localize actual performance (intro/outro removal, subsequence matching)
 
