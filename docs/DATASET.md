@@ -60,3 +60,17 @@ Inspect `bella-lucas-pairs.csv` before adopting a ground-truth split. PDF with d
 ## Copyright and privacy
 
 Never commit raw MP3/MP4/PDF files, credentials, downloader account storage, or model checkpoints to the public repository. `data/` is ignored. Before publishing a manifest, review its filenames and source metadata for private or copyrighted material.
+
+## Content audit (after resolving duplicate scores)
+
+Install the optional audio-audit dependency and system tools (ffmpeg and poppler-utils on Debian/Ubuntu). Regenerate the manifest after any file changes.
+
+```bash
+python -m pip install -e '.[audit]'
+python -m duet2score.data.content_audit \\
+  --inventory data/manifests/bella-lucas-inventory.json \\
+  --out data/manifests/content-audit.json \\
+  --full-decode
+```
+
+The command writes JSON and CSV, decodes the two audio tracks, optionally verifies all video frames, checks PDF metadata, and estimates relative audio-track offsets using three normalized waveform correlation windows. A candidate match is not verified score correspondence. The offset is decoded MP4 audio-track time minus decoded external MP3 time. It is not a proof of video-frame synchronization, and matching intro music is not identified by this method. Review low-confidence, variable-offset, decode-failure, and missing-metadata cases before any trimming. Raw files are never modified.
