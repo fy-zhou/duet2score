@@ -12,6 +12,9 @@ license = "GPL-3.0-only"
 authors = [{ name = "Duet2Score contributors" }]
 dependencies = []
 
+[project.optional-dependencies]
+audit = ["numpy>=1.24"]
+
 [project.scripts]
 duet2score-inventory = "duet2score.data.inventory:main"
 duet2score-media-audit = "duet2score.data.audit:main"
