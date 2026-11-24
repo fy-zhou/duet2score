@@ -14,6 +14,7 @@ dependencies = []
 
 [project.scripts]
 duet2score-inventory = "duet2score.data.inventory:main"
+duet2score-media-audit = "duet2score.data.audit:main"
 duet2score-extract-audio = "duet2score.data.extract_audio:main"
 
 [tool.setuptools.packages.find]
