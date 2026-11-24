@@ -26,12 +26,16 @@ cd duet2score
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
-# Copy *your own* videos, audio and scores into data/raw/<piece-id>/.
-duet2score-inventory --root data/raw --out data/manifests/inventory.json
+# You may use a type-grouped collection (root PDFs, 音频/, 视频/) directly:
+DATA="$(find "$HOME/datasets/duet2score" -type d -name 'Bella Lucas' -print -quit)"
+duet2score-inventory --root "$DATA" --layout grouped \
+  --out data/manifests/inventory.json \
+  --csv data/manifests/pairing.csv
+# Or scan data/raw/ if your files are organized in per-piece directories.
 python -m unittest discover -s tests -v
 ```
 
-A piece directory may hold any mix of PDF, MSCZ, MusicXML, MIDI, MP4, MKV, MP3, FLAC or WAV. The inventory command does not alter the source files. It records counts, sizes, relative paths and optional ffprobe stream metadata. It does **not** automatically align scores and performances.
+The inventory supports both per-piece subdirectories and a type-grouped layout (e.g. PDFs in the root, MP3 under 音频/, MP4 under 视频/). The inventory command does not alter the source files. It records counts, sizes, relative paths and optional ffprobe stream metadata. It does **not** automatically align scores and performances.
 
 ## Safety and licensing
 
