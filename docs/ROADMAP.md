@@ -7,6 +7,8 @@
 - [x] ffmpeg audio extraction helper
 - [x] Run initial grouped inventory: 49 video + 49 audio + 50 score; 49 filename-matched triplets (user local run)
 - [x] Add optional ffprobe-based duration audit (command, not yet executed on real data)
+- [x] Resolve one duplicate PDF locally; 49 candidate triplets (user confirmation)
+- [x] Implement read-only content audit and synthetic synchronization tests (local run on real data pending)
 - [ ] Validate audio/video contents and duration anomalies; confirm 49 candidate pairs manually
 - [ ] Inspect dataset statistics and define ground truth/held-out tracks
 - [ ] Automatically localize actual performance (intro/outro removal, subsequence matching)
